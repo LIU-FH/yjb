@@ -1,0 +1,603 @@
+[2020-04-11T04:30:56.665727+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 442
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e9147fee6e3a]]></nonce_str><body><![CDATA[测试商品]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.170.177]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[87F5A214A9896AF19DE54B3012331CE2]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sat, 11 Apr 2020 04:30:54 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-11T04:41:37.783459+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 442
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e914a7f2b542]]></nonce_str><body><![CDATA[测试商品]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.170.177]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[491ACDB350C705924F8CCE3EDF981B19]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sat, 11 Apr 2020 04:41:35 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-11T04:47:28.434377+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 442
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e914bd7a2374]]></nonce_str><body><![CDATA[测试商品]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.170.177]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[C5F88267FEBF0EE7FBE72A9CB8078977]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sat, 11 Apr 2020 04:47:26 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-11T04:48:09.968102+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 442
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e914c04138a9]]></nonce_str><body><![CDATA[测试商品]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.170.177]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[A4717228F0A1CEAC4650131ED9A445AD]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sat, 11 Apr 2020 04:48:07 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-11T04:49:16.944718+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 442
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e914c4972e9d]]></nonce_str><body><![CDATA[测试商品]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.170.177]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[B6401077630833EE6C697DDF63DA5937]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sat, 11 Apr 2020 04:49:14 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-11T04:50:18.520513+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 442
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e914c88c1245]]></nonce_str><body><![CDATA[测试商品]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.170.177]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[7AD291D9672D159A3A38D0D20B8C9D5E]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sat, 11 Apr 2020 04:50:16 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-11T04:54:07.498471+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 442
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e914d6db09c4]]></nonce_str><body><![CDATA[测试商品]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.170.177]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[6DC48BFE2AEB9BB10D86E6F559FA5689]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sat, 11 Apr 2020 04:54:05 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-11T05:47:14.493596+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 442
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e9159dec44a5]]></nonce_str><body><![CDATA[测试商品]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.170.177]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[C9F7B33554D42912E727DB2E176B8472]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sat, 11 Apr 2020 05:47:12 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-11T05:47:46.584935+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 445
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e9159fdd8489]]></nonce_str><body><![CDATA[测试商品二]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.170.177]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[9FB0676FA9BFACB89D0FAF93983ADD9C]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sat, 11 Apr 2020 05:47:44 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-11T07:31:59.072882+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 442
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e91726c6c41e]]></nonce_str><body><![CDATA[测试商品]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.170.177]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[FB20170859C4C9D626F3E46D7BB47F48]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sat, 11 Apr 2020 07:31:57 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-11T08:54:08.954790+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 442
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e9185af387f6]]></nonce_str><body><![CDATA[测试商品]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.170.177]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[931C864DF2674068AF11176195ADA113]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sat, 11 Apr 2020 08:54:07 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-11T08:57:16.312446+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 442
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e918669b8840]]></nonce_str><body><![CDATA[测试商品]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.170.177]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[FD982971926E2A099A66C78DD53FF2D1]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sat, 11 Apr 2020 08:57:14 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-11T09:01:06.254052+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 442
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e91874d78234]]></nonce_str><body><![CDATA[测试商品]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.170.177]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[98A62C8B4216BDF436C6A558A6113E6D]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sat, 11 Apr 2020 09:01:04 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-11T09:03:57.872011+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 445
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e9187fb3d727]]></nonce_str><body><![CDATA[测试商品二]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.170.177]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[574230EB8CC28199D88369812FF47ACB]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sat, 11 Apr 2020 09:03:55 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-11T15:59:49.962585+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 443
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e91e97237af1]]></nonce_str><body><![CDATA[测试商品二]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[172.18.76.209]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[16281FE7F1BFDBBC496C51AE372DF6E4]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sat, 11 Apr 2020 15:59:46 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-12T05:56:48.910414+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 452
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e92ad9eeb546]]></nonce_str><body><![CDATA[狗子狗子狗子狗子]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[172.18.28.209]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[E4E7D0F37B01140774CCDDC46A12E940]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Sun, 12 Apr 2020 05:56:48 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-12T08:47:50.659190+00:00] EasyWeChat.NOTICE: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 452
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e92d5989b94b]]></nonce_str><body><![CDATA[狗子狗子狗子狗子]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[172.18.28.209]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[23F7A68CAC5B51CFF9014D50BEC58923]]></sign></xml>
+<<<<<<<<
+
+--------
+cURL error 28: Operation timed out after 30001 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html)  
+[2020-04-14T01:21:44.934723+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 453
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e95102621c01]]></nonce_str><body><![CDATA[狗子狗子狗子狗子]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.206.49]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[2078522B0668A6517B3BC9DEAE1FFE61]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 14 Apr 2020 01:21:43 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-14T01:23:03.867237+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 441
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str>5e95107596477</nonce_str><body><![CDATA[狗子狗子狗子狗子]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.206.49]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[D2015A598EC3615985CA87641FC58B32]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 14 Apr 2020 01:23:02 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-14T01:23:49.028666+00:00] EasyWeChat.NOTICE: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 453
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e951087027ac]]></nonce_str><body><![CDATA[狗子狗子狗子狗子]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.206.49]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[0C5009B78463A4DF18FEF1C1EE4645B8]]></sign></xml>
+<<<<<<<<
+
+--------
+cURL error 28: Operation timed out after 30000 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html)  
+[2020-04-14T01:24:19.194541+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 453
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e9510c0c4352]]></nonce_str><body><![CDATA[狗子狗子狗子狗子]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.206.49]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[A64D3AC3C9CB226E0915CC1F8EE98A00]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 14 Apr 2020 01:24:17 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-14T01:30:25.738189+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 453
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e951228df848]]></nonce_str><body><![CDATA[狗子狗子狗子狗子]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.206.49]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[DB6ABD5AB91B5C61B11C9BBE7404980C]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 14 Apr 2020 01:30:24 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-14T01:40:53.448450+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 453
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e9514a3cbda2]]></nonce_str><body><![CDATA[狗子狗子狗子狗子]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.206.49]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[1AFA537EA55174C84A44A5ABA0A2FDBE]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 14 Apr 2020 01:40:51 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-14T01:42:20.482443+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 453
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e9514f335b80]]></nonce_str><body><![CDATA[狗子狗子狗子狗子]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.206.49]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[52E0CBA492FD1A65E7E3AB56A0360E13]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 14 Apr 2020 01:42:18 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-14T01:42:33.443672+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 453
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e951507c9764]]></nonce_str><body><![CDATA[狗子狗子狗子狗子]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.206.49]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[3124F870573DBD7229ABB356BDEE1DCC]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 14 Apr 2020 01:42:31 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-14T01:43:15.677121+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 441
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str>5e95153213007</nonce_str><body><![CDATA[狗子狗子狗子狗子]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.206.49]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[0F5B61F16721020FE4B297D35E75AF72]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 14 Apr 2020 01:43:14 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-14T01:47:48.784369+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 525
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e95164029b0f]]></nonce_str><body><![CDATA[狗子狗子狗子狗子]]></body><out_trade_no>202004140147441</out_trade_no><total_fee>889.2</total_fee><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.206.49]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[0F6433F9ADD4D13375BE32A5F69D8D24]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 14 Apr 2020 01:47:47 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-14T01:48:02.887321+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 453
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e9516513c4ed]]></nonce_str><body><![CDATA[狗子狗子狗子狗子]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.206.49]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[0242412D2A68FB81ED6E0C6EFD886352]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 14 Apr 2020 01:48:01 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-14T01:50:33.157211+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 453
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e9516de8482f]]></nonce_str><body><![CDATA[狗子狗子狗子狗子]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.206.49]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[1F2420C728C5345BCD002548ED5CEA05]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 14 Apr 2020 01:50:31 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-14T02:07:05.708076+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 453
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e951ac7e9cd3]]></nonce_str><body><![CDATA[狗子狗子狗子狗子]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.206.49]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[20FE36F5AAE750B924CC40BFFB5EBC4C]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 14 Apr 2020 02:07:04 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-14T02:35:53.037603+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 453
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e95217008e27]]></nonce_str><body><![CDATA[狗子狗子狗子狗子]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.206.49]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[29D20639D6C5691320C714D25CAE9F01]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 14 Apr 2020 02:35:51 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-14T02:36:28.632193+00:00] EasyWeChat.INFO: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 453
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e95219eef0c3]]></nonce_str><body><![CDATA[狗子狗子狗子狗子]]></body><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.206.49]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[F7A47FC57CD801726FA618961CFCBA06]]></sign></xml>
+<<<<<<<<
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 14 Apr 2020 02:36:27 GMT
+Content-Type: text/plain
+Content-Length: 115
+Connection: keep-alive
+Keep-Alive: timeout=8
+
+<xml><return_code><![CDATA[FAIL]]></return_code><return_msg><![CDATA[mch_id参数格式错误]]></return_msg></xml>
+--------
+NULL  
+[2020-04-14T03:51:24.574132+00:00] EasyWeChat.NOTICE: >>>>>>>>
+POST /pay/unifiedorder HTTP/1.1
+Content-Length: 526
+User-Agent: GuzzleHttp/6.5.1 curl/7.58.0 PHP/7.2.24
+Host: api.mch.weixin.qq.com
+
+<xml><mch_id><![CDATA[your-mch-id]]></mch_id><nonce_str><![CDATA[5e95331e8743a]]></nonce_str><body><![CDATA[狗子狗子狗子狗子]]></body><out_trade_no>202004140148011</out_trade_no><total_fee>889.20</total_fee><trade_type><![CDATA[JSAPI]]></trade_type><openid>11111111111111111</openid><spbill_create_ip><![CDATA[192.168.206.49]]></spbill_create_ip><appid><![CDATA[wx3cf0f39249eb0exx]]></appid><notify_url><![CDATA[默认的订单回调地址]]></notify_url><sign><![CDATA[2D96AD4938908644E81CF28ACDCBC397]]></sign></xml>
+<<<<<<<<
+
+--------
+cURL error 28: Operation timed out after 30000 milliseconds with 0 bytes received (see https://curl.haxx.se/libcurl/c/libcurl-errors.html)  
