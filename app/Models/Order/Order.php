@@ -97,8 +97,8 @@ class Order extends Model
         }
         $user = User::find($user_id);
         $amount_total = $discount = $discount_amount = 0;
-        foreach ($goodsList as $item) {
-            $item['user_id'] = $user->id;
+        foreach ($goodsList as $key => $item) {
+            $goodsList[$key]['user_id'] = $user->id;
             $amount_total += $item['price'];
         }
         if ($balance && $user->wallet->balance < $balance) {
