@@ -20,8 +20,8 @@ class WxPayController extends Controller
             }
         }else {
             $order = new Order();
-            $order->user_id = $this->user['id'];
-            $order->order_no = date('YmdHis' . $this->user['id']);
+            $order->user_id = $request->user()->id;
+            $order->order_no = date('YmdHis' . $request->user()->id);
             $order->coun = 1;
             $order->amount_total = 0.01;
             $order->amount = 0.01;

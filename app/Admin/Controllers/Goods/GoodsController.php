@@ -4,6 +4,7 @@ namespace App\Admin\Controllers\Goods;
 
 use App\Models\Goods\Goods;
 use App\Http\Controllers\Controller;
+use App\Models\Goods\GoodsDetails;
 use Encore\Admin\Controllers\HasResourceActions;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -90,6 +91,9 @@ class GoodsController extends Controller
         $grid->tags(__('goods.tags'))->label();
         $grid->stock(__('goods.stock'))->sortable();
         $grid->category_id(__('goods.category_id'))->using(Goods::$EnumCategory);
+        $grid->column('details_empty', __('goods.details'))->modal('详情', function ($value) {
+            return $value->details;
+        });
         $grid->click_count(__('goods.click_count'))->sortable();
         $grid->buy_count(__('goods.buy_count'))->sortable();
         $grid->status(__('goods.status'))->using(Goods::$EnumStatus)->label([0 => 'default', 1 => 'info'])->sortable();
@@ -124,7 +128,7 @@ class GoodsController extends Controller
         $show->discount(__('goods.discount'));
         $show->tags(__('goods.tags'))->label();
         $show->stock(__('goods.stock'));
-        $show->details(__('goods.details'))->image();
+        $show->details_id(__('goods.details_id'))->image();
         $show->category_id(__('goods.category_id'))->using(Goods::$EnumCategory);
         $show->click_count(__('goods.click_count'));
         $show->buy_count(__('goods.buy_count'));
@@ -154,7 +158,6 @@ class GoodsController extends Controller
         $form->text('discount', __('goods.discount'));
         $form->tags('tags', __('goods.tags'))->required();
         $form->number('stock', __('goods.stock'))->default(0);
-        $form->multipleImage('details', __('goods.details'))->removable()->sortable();
         $form->select('category_id', __('goods.category_id'))->options(Goods::$EnumCategory)->default(0);
         $form->number('click_count', __('goods.click_count'))->default(0);
         $form->number('buy_count', __('goods.buy_count'))->default(0);
@@ -162,9 +165,7 @@ class GoodsController extends Controller
         $form->datetime('end_time', __('goods.end_time'))->format('YYYY-MM-DD HH:mm:ss');
         $form->datetime('send_time', __('goods.send_time'))->format('YYYY-MM-DD HH:mm:ss');
         $form->switch('status', "是否上架")->default(0);
-        $form->display(trans('admin.created_at'));
-        $form->display(trans('admin.updated_at'));
-
+        $form->UEditor('details', __('goods.details'));
         return $form;
     }
 }

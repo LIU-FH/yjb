@@ -27,21 +27,25 @@ class Goods extends Model
 
     public static $EnumStatus = [0 => '未上架', 1 => '上架中'];
 
-    public function setDetailsAttribute($value)
-    {
-        $this->attributes['details'] = is_array($value) ? implode(',', $value) : $value;
-    }
-
-    public function getDetailsAttribute($value)
-    {
-        return $value ? explode(',', $value) : [];
-    }
-
     public function getTagsAttribute($value)
     {
         return $value ? explode(',', $value) : [];
     }
 
+    public function getSellStatus()
+    {
+        $status = 0;
+        if ($this->stock <= $this->buy_count) {
+            $status = 1;
+        }
+        if ($this->start_time && $this->start_time > time()) {
+            $status = 2;
+        } else if ($this->start_time && $this->start_time > time()) {
+            $status = 3;
+        }
+        $status_name = Goods::$EnumSellStatus[$status];
+        return compact('status', 'status_name');
+    }
 
     /**
      * 获取有戏商品

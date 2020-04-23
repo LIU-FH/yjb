@@ -6,45 +6,84 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\User\UserResource;
 use App\Models\User\User;
+use App\Models\User\Wallet;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use EasyWeChat\Factory;
 use Illuminate\Support\Facades\Log;
 
 class AuthController extends Controller
 {
-    public function login(Request $request)
+    public function wxLogin(Request $request)
     {
-        $params = $request->all();
-        $params['openId'] = '';
-        $params['unionId'] = '';
-        if(!empty($params['code'])){
-            $app = Factory::miniProgram(config('wechat'));
-            $res = $app->auth->session($params['code']);
-            Log::info("wechat",$res);
-            $params['openId'] = $res['openId'];
-            $params['unionId'] = $res['unionId'];
+        $openid = $unionid = $session_key = '111';
+        if (!empty($request->input('code'))) {
+            $wxAuth = [];
+            try {
+                $app = Factory::miniProgram(config('wechat'));
+                $wxAuth = $app->auth->session($request->input('code'));
+                $openid = $wxAuth['openId'];
+                $unionid = $wxAuth['unionId'];
+                $session_key = $wxAuth['session_key'];
+            } catch (\Exception $e) {
+                Log::error("wx-auth", $wxAuth);
+                abort(5003);
+            }
         }
-        if (!$obj = User::where('openid', $params['openId'])->first()) {
-            $obj = new User();
-            $obj->parent_id = 0;
-            $obj->keyword = md5(md5(md5($params['openId'])));
+        if (!$user = User::where('openid', $openid)->first()) {
+            $user = new User();
+            $params['keyword'] = uniqid();
         }
-        $obj->openid = $params['openId'];
-        $obj->unionid = $params['unionId'];
-        $obj->nickname = $params['userInfo']['nickName'];
-        $obj->avatarurl = $params['userInfo']['avatarUrl'];
-        $obj->gender = $params['userInfo']['gender'];
-        $obj->last_login_time = date("Y-m-d H:i:s",time());
-        if (!$obj->save()) {
-            abort(5001);
-        }
-        return new UserResource($obj);
+        $params['openid'] = $openid;
+        $params['unionid'] = $unionid;
+        $params['session_key'] = $session_key;
+        $params['nickname'] = $request->input('userInfo')['nickName'];
+        $params['avatarurl'] = $request->input('userInfo')['avatarUrl'];
+        $params['gender'] = $request->input('userInfo')['gender'];
+        return $this->doLogin($user, $params);
     }
 
-    public function upload(Request $request)
+    public function phoneLogin(Request $request)
     {
-        $url = Storage::putFile('public/upload/' . date("Ymd"), $request->file('file'));
-        return response(str_replace('public/', '', $url), 200);
+        $key = 'phone-code-' . $request->input('phone');
+        if (Cache::get($key) != $request->input('code')) {
+            abort(5009);
+        }
+        if (!$user = User::where('phone', $request->input('phone'))->first()) {
+            $user = new User();
+            $params['keyword'] = uniqid();
+            $params['nickname'] = "悦会员-" . rand(1000, 10000);
+            $params['avatarurl'] = 'https://img-cdn-qiniu.dcloud.net.cn/uniapp/doc/github.svg';
+            $params['gender'] = 2;
+        }
+        return $this->doLogin($user, $params);
+    }
+
+    public function doLogin($user, $params)
+    {
+        DB::beginTransaction();
+        try {
+            $params['last_login_time'] = date("Y-m-d H:i:s", time());
+            $user->fill($params);
+            if (!$user->save()) {
+                abort(5001);
+            }
+            if (!$user->wallet) {
+                if (!$user->wallet()->save(new Wallet())) {
+                    abort(5001);
+                }
+            }
+            DB::commit();
+        } catch (\Exception $exception) {
+            DB::rollBack();
+            abort(5001);
+        }
+        $token = $user->createToken($user->id);
+        return response([
+            'token' => $token->plainTextToken,
+            'userInfo' => new UserResource($user)
+        ], 200);
     }
 }

@@ -1,12 +1,12 @@
 <?php
-Route::prefix('user')->namespace('User')->group(function () {
+Route::middleware('auth:sanctum')->prefix('user')->namespace('User')->group(function () {
 
     Route::get('info', 'UserController@info')->name('user.info');
     Route::get('order_count', 'UserController@orderCount')->name('user.orderCount');
     Route::get('cart_count', 'UserController@cartCount')->name('user.cartCount');
 
     Route::post('bind_parent', 'UserController@bindParent')->name('user.bindParent');
-    Route::post('get_phone_code', 'UserController@getPhoneCode')->name('user.getPhoneCode');
+
     Route::post('bind_phone', 'UserController@bindPhone')->name('user.bindPhone');
 
     Route::get('ercode', 'WeChatController@ercode')->name('wechat.ercode');

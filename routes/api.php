@@ -14,9 +14,6 @@ use Illuminate\Support\Facades\File;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
 Route::prefix('v1')->name('api.v1.')->group(function () {
     Route::middleware('throttle:' . config('api.rate_limits.sign'))->group(function () {
         require base_path('routes/api/auth.php');

@@ -14,7 +14,7 @@ class WeChatController extends Controller
     {
         $scene = json_encode([
             'path' => $request->path,
-            'uid' => $this->user['id'],
+            'uid' => $request->user()->id,
         ]);
         $dir = '/ercode/';
         $filename = md5($scene) . '.png';

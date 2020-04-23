@@ -3,9 +3,11 @@
 namespace App\Models\Order;
 
 use App\Models\Goods\Goods;
+use App\Models\Goods\GoodsCart;
 use App\Models\Goods\GoodsGroup;
 use App\Models\User\Wallet;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Log;
 
 class Order extends Model
 {
@@ -52,6 +54,10 @@ class Order extends Model
         return $this->hasMany('App\Models\Order\OrderComment');
     }
 
+    public function user(){
+        return $this->hasOne('App\Models\User\User', 'id', 'user_id');
+    }
+
     /**
      * 创建商品订单
      * @param $user
@@ -71,20 +77,26 @@ class Order extends Model
                 "price" => $goods->price,
                 "count" => 1,
             ];
-        } else if (!empty($params['goods_group'])) {
-            $goods = Goods::getEffectiveGoods($params['goods_group']);
-            $goodsList[] = [
-                "goods_id" => $goods->id,
-                "img" => $goods->img,
-                "title" => $goods->title,
-                "price" => $goods->price,
-                "count" => 1,
-            ];
-        } else {
-            abort(5020);
+        }
+        if (!empty($params['cart'])) {
+            $cart = GoodsCart::find(explode(',',$params['cart']));
+            foreach ($cart as $k=>$v){
+                $cartGoods = $v->goods;
+                $goodsList[] = [
+                    "goods_id" => $cartGoods->id,
+                    "img" => $cartGoods->img,
+                    "title" => $cartGoods->title,
+                    "price" => $cartGoods->price,
+                    "count" => $v->num,
+                ];
+            }
+        }
+        if (count($goodsList) == 0){
+            abort(5041);
         }
         $amount_total = $discount = $discount_amount = 0;
         foreach ($goodsList as $item) {
+            $item['user_id'] = $user->id;
             $amount_total += $item['price'];
         }
         if ($balance && $user->wallet->balance < $balance) {
@@ -110,5 +122,4 @@ class Order extends Model
         $data['details'] = $goodsList;
         return $data;
     }
-
 }

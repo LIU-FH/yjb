@@ -6,10 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Http\Queries\Order\OrderQuery;
 use App\Http\Resources\Order\OrderResource;
 use App\Models\Goods\Goods;
+use App\Models\Goods\GoodsCart;
 use App\Models\Goods\GoodsGroup;
 use App\Models\Order\Order;
 use App\Models\Order\OrderDetails;
 use App\Models\User\Address;
+use App\Traits\RequestTrait;
 use EasyWeChat\Factory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -18,9 +20,13 @@ use Symfony\Component\ErrorHandler\Exception\FlattenException;
 
 class OrderController extends Controller
 {
-    public function index(OrderQuery $query)
+    public function index(Request $request)
     {
-        $query = $query->where('user_id', $this->user['id']);
+        $query = new Order();
+        $query = $query->where('user_id', $request->user()->id);
+        if ($request->get('status') > -1) {
+            $query = $query->where('status', $request->get('status'));
+        }
         $list = $query->paginate();
         foreach ($list as $item) {
             $item->details;
@@ -28,9 +34,9 @@ class OrderController extends Controller
         return OrderResource::collection($list);
     }
 
-    public function show($id)
+    public function show($id, Request $request)
     {
-        $order = Order::where('user_id', $this->user['id'])->where('id', $id)->first();
+        $order = Order::where('user_id', $request->user()->id)->where('id', $id)->first();
         $order->details;
         return new OrderResource($order);
     }
@@ -45,7 +51,7 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         $params = $request->all();
-        $data = Order::createOrder($this->user, $params['params'], $params['balance']);
+        $data = Order::createOrder($request->user(), $params['params'], $params['balance']);
         $data['address_name'] = $params['address_name'];
         $data['address_tel'] = $params['address_tel'];
         $data['address_details'] = $params['address_details'];
@@ -54,10 +60,14 @@ class OrderController extends Controller
         $order = new Order();
         $unifyRes = [];
         try {
-
             $order->fill($data);
             if (!$order->save()) {
                 abort(500);
+            }
+            if (isset($params['params']['cart'])) {
+                if (!GoodsCart::whereIn('id', explode(',', $params['params']['cart']))->delete()) {
+                    abort(500);
+                }
             }
             $details = array_map(function ($item) use ($order) {
                 $item['order_id'] = $order->id;
@@ -81,6 +91,8 @@ class OrderController extends Controller
         } catch (\Exception $exception) {
             DB::rollBack();
             $fe = FlattenException::create($exception);
+            Log::error($exception->getMessage());
+            Log::error($fe->getStatusCode());
             abort($fe->getStatusCode());
         }
         return response([
@@ -92,9 +104,10 @@ class OrderController extends Controller
         ], 200);
     }
 
-    public function orderPay(Request $request){
+    public function orderPay(Request $request)
+    {
         $params = $request->all();
-        $order = Order::where('user_id', $this->user['id'])->where('id', $params['order_id'])->first();
+        $order = Order::where('user_id', $request->user()->id)->where('id', $params['order_id'])->first();
         $order->details;
         $app = Factory::payment(config('wechat'));
         $unifyRes = $app->order->unify([
@@ -116,11 +129,12 @@ class OrderController extends Controller
         ], 200);
     }
 
-    public function update($id, Request $request)
+    public function update(Request $request)
     {
-        $order = Order::where('user_id', $this->user['id'])->where('id', $id)->first();
+        $params = $request->all();
+        $order = Order::where('user_id', $request->user()->id)->where('id', $params['id'])->first();
         $order->details;
-        $status = $request->get('status');
+        $status = $params['status'];
         if ($order->status == 0 && $status == -7) {
             $order->status = -7;
         } else if ($order->status == 1 && $status == -1) {
@@ -128,7 +142,7 @@ class OrderController extends Controller
         } else if (($order->status == 2 || $order->status == 3) && $status == -4) {
             $order->status = -4;
         }
-        if (!$order->save()){
+        if (!$order->save()) {
             abort(500);
         }
         return new OrderResource($order);

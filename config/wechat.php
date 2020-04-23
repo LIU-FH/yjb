@@ -1,7 +1,7 @@
 <?php
 return [
-    'app_id' => 'wx3cf0f39249eb0exx',
-    'secret' => 'f1c242f4f28f735d4687abb469072axx',
+    'app_id' => env("WX_APP_ID"),
+    'secret' => env("WX_SECRET"),
 
     'response_type' => 'array',
 

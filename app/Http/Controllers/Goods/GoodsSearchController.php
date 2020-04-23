@@ -22,7 +22,7 @@ class GoodsSearchController extends Controller
         $all = $request->all();
         $all['imgs'] = is_array($all['imgs']) ? implode(',', $all['imgs']) : $all['imgs'];
         $obj->fill($all);
-        $obj->user_id = $this->user['id'];
+        $obj->user_id = $request->user()->id;
         $obj->save();
         return response(null, 200);
     }

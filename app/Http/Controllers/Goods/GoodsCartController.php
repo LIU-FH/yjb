@@ -7,14 +7,15 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\Goods\GoodsResource;
 use App\Models\Goods\GoodsCart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class GoodsCartController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $list = GoodsCart::where('user_id', $this->user->id)->paginate();
+        $list = GoodsCart::where('user_id', $request->user()->id)->paginate();
         foreach ($list as $item) {
-            $item->goods = new GoodsResource($item->goods);
+            $item->goods->sell_status  = $item->goods->getSellStatus();
         }
         return response($list, 200);
     }
@@ -23,7 +24,7 @@ class GoodsCartController extends Controller
     {
         $all = $request->all();
         $obj->fill($all);
-        $obj->user_id = $this->user['id'];
+        $obj->user_id = $request->user()->id;
         $obj->save();
         return response(null, 200);
     }

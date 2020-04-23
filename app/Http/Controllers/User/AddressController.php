@@ -6,13 +6,14 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\User\AddressRequest;
 use App\Http\Resources\User\AddressResource;
 use App\Models\User\Address;
+use Illuminate\Http\Request;
 
 class AddressController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $query = new Address();
-        $list = $query->where('user_id', $this->user['id'])->orderBy('default','desc')->paginate();
+        $list = $query->where('user_id', $request->user()->id)->orderBy('default','desc')->paginate();
         return AddressResource::collection($list);
     }
 
@@ -20,10 +21,10 @@ class AddressController extends Controller
     {
         $all = $request->all();
         if ($all['default']) {
-            Address::where('user_id', $this->user['id'])->update(['default' => 0]);
+            Address::where('user_id', $request->user()->id)->update(['default' => 0]);
         }
         $obj->fill($all);
-        $obj->user_id = $this->user['id'];
+        $obj->user_id = $request->user()->id;
         $obj->save();
         return new AddressResource($obj);
     }
@@ -32,7 +33,7 @@ class AddressController extends Controller
     {
         $all = $request->all();
         if ($all['default']) {
-            Address::where('user_id', $this->user['id'])->update(['default' => 0]);
+            Address::where('user_id', $request->user()->id)->update(['default' => 0]);
         }
         $articles = Address::find($id);
         $articles->update($all);

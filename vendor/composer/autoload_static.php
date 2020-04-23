@@ -118,6 +118,7 @@ class ComposerStaticInit4d0ff8ad8ceb038d548686ba24dd60b8
             'League\\Flysystem\\' => 17,
             'League\\CommonMark\\' => 18,
             'Laravel\\Tinker\\' => 15,
+            'Laravel\\Sanctum\\' => 16,
         ),
         'J' => 
         array (
@@ -169,6 +170,8 @@ class ComposerStaticInit4d0ff8ad8ceb038d548686ba24dd60b8
         'C' => 
         array (
             'Cron\\' => 5,
+            'Codingyu\\Ueditor\\' => 17,
+            'Codingyu\\LaravelUEditor\\' => 24,
             'Carbon\\' => 7,
         ),
         'A' => 
@@ -389,6 +392,10 @@ class ComposerStaticInit4d0ff8ad8ceb038d548686ba24dd60b8
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
         ),
+        'Laravel\\Sanctum\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/sanctum/src',
+        ),
         'JakubOnderka\\PhpConsoleHighlighter\\' => 
         array (
             0 => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src',
@@ -509,6 +516,14 @@ class ComposerStaticInit4d0ff8ad8ceb038d548686ba24dd60b8
         array (
             0 => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron',
         ),
+        'Codingyu\\Ueditor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/codingyu/ueditor/src',
+        ),
+        'Codingyu\\LaravelUEditor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/codingyu/laravel-ueditor/src',
+        ),
         'Carbon\\' => 
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
@@ -554,7 +569,9 @@ class ComposerStaticInit4d0ff8ad8ceb038d548686ba24dd60b8
     public static $classMap = array (
         'App\\Admin\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Admin/Controllers/AuthController.php',
         'App\\Admin\\Controllers\\ExampleController' => __DIR__ . '/../..' . '/app/Admin/Controllers/ExampleController.php',
+        'App\\Admin\\Controllers\\Goods\\GoodsCartController' => __DIR__ . '/../..' . '/app/Admin/Controllers/Goods/GoodsCartController.php',
         'App\\Admin\\Controllers\\Goods\\GoodsController' => __DIR__ . '/../..' . '/app/Admin/Controllers/Goods/GoodsController.php',
+        'App\\Admin\\Controllers\\Goods\\GoodsDetailsController' => __DIR__ . '/../..' . '/app/Admin/Controllers/Goods/GoodsDetailsController.php',
         'App\\Admin\\Controllers\\Goods\\GoodsGroupController' => __DIR__ . '/../..' . '/app/Admin/Controllers/Goods/GoodsGroupController.php',
         'App\\Admin\\Controllers\\Goods\\GoodsSearchController' => __DIR__ . '/../..' . '/app/Admin/Controllers/Goods/GoodsSearchController.php',
         'App\\Admin\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Admin/Controllers/HomeController.php',
@@ -577,18 +594,21 @@ class ComposerStaticInit4d0ff8ad8ceb038d548686ba24dd60b8
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\Goods\\GoodsCartController' => __DIR__ . '/../..' . '/app/Http/Controllers/Goods/GoodsCartController.php',
         'App\\Http\\Controllers\\Goods\\GoodsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Goods/GoodsController.php',
+        'App\\Http\\Controllers\\Goods\\GoodsDetailsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Goods/GoodsDetailsController.php',
         'App\\Http\\Controllers\\Goods\\GoodsGroupController' => __DIR__ . '/../..' . '/app/Http/Controllers/Goods/GoodsGroupController.php',
         'App\\Http\\Controllers\\Goods\\GoodsSearchController' => __DIR__ . '/../..' . '/app/Http/Controllers/Goods/GoodsSearchController.php',
+        'App\\Http\\Controllers\\IndexController' => __DIR__ . '/../..' . '/app/Http/Controllers/IndexController.php',
         'App\\Http\\Controllers\\Order\\OrderCommentController' => __DIR__ . '/../..' . '/app/Http/Controllers/Order/OrderCommentController.php',
         'App\\Http\\Controllers\\Order\\OrderController' => __DIR__ . '/../..' . '/app/Http/Controllers/Order/OrderController.php',
-        'App\\Http\\Controllers\\Order\\WalletController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/WalletController.php',
-        'App\\Http\\Controllers\\Order\\WalletRecordController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/WalletRecordController.php',
-        'App\\Http\\Controllers\\Order\\WithdrawController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/WithdrawController.php',
         'App\\Http\\Controllers\\Pay\\WxPayController' => __DIR__ . '/../..' . '/app/Http/Controllers/Pay/WxPayController.php',
         'App\\Http\\Controllers\\User\\AddressController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/AddressController.php',
         'App\\Http\\Controllers\\User\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/UserController.php',
+        'App\\Http\\Controllers\\User\\WalletController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/WalletController.php',
+        'App\\Http\\Controllers\\User\\WalletRecordController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/WalletRecordController.php',
         'App\\Http\\Controllers\\User\\WeChatController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/WeChatController.php',
+        'App\\Http\\Controllers\\User\\WithdrawController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/WithdrawController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
@@ -621,8 +641,11 @@ class ComposerStaticInit4d0ff8ad8ceb038d548686ba24dd60b8
         'App\\Jobs\\BaseQueue' => __DIR__ . '/../..' . '/app/Jobs/BaseQueue.php',
         'App\\Jobs\\File\\GitPushQueue' => __DIR__ . '/../..' . '/app/Jobs/File/GitPushQueue.php',
         'App\\Jobs\\File\\UpdateCacheQueue' => __DIR__ . '/../..' . '/app/Jobs/File/UpdateCacheQueue.php',
+        'App\\Listeners\\QueryListener' => __DIR__ . '/../..' . '/app/Listeners/QueryListener.php',
         'App\\Models\\BaseModel' => __DIR__ . '/../..' . '/app/Models/BaseModel.php',
         'App\\Models\\Goods\\Goods' => __DIR__ . '/../..' . '/app/Models/Goods/Goods.php',
+        'App\\Models\\Goods\\GoodsCart' => __DIR__ . '/../..' . '/app/Models/Goods/GoodsCart.php',
+        'App\\Models\\Goods\\GoodsDetails' => __DIR__ . '/../..' . '/app/Models/Goods/GoodsDetails.php',
         'App\\Models\\Goods\\GoodsGroup' => __DIR__ . '/../..' . '/app/Models/Goods/GoodsGroup.php',
         'App\\Models\\Goods\\GoodsSearch' => __DIR__ . '/../..' . '/app/Models/Goods/GoodsSearch.php',
         'App\\Models\\Order\\Order' => __DIR__ . '/../..' . '/app/Models/Order/Order.php',
@@ -679,6 +702,16 @@ class ComposerStaticInit4d0ff8ad8ceb038d548686ba24dd60b8
         'Carbon\\Traits\\Units' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Units.php',
         'Carbon\\Traits\\Week' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Week.php',
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
+        'Codingyu\\LaravelUEditor\\Events\\Catched' => __DIR__ . '/..' . '/codingyu/laravel-ueditor/src/Events/Catched.php',
+        'Codingyu\\LaravelUEditor\\Events\\Uploaded' => __DIR__ . '/..' . '/codingyu/laravel-ueditor/src/Events/Uploaded.php',
+        'Codingyu\\LaravelUEditor\\Events\\Uploading' => __DIR__ . '/..' . '/codingyu/laravel-ueditor/src/Events/Uploading.php',
+        'Codingyu\\LaravelUEditor\\StorageManager' => __DIR__ . '/..' . '/codingyu/laravel-ueditor/src/StorageManager.php',
+        'Codingyu\\LaravelUEditor\\UEditorController' => __DIR__ . '/..' . '/codingyu/laravel-ueditor/src/UEditorController.php',
+        'Codingyu\\LaravelUEditor\\UEditorServiceProvider' => __DIR__ . '/..' . '/codingyu/laravel-ueditor/src/UEditorServiceProvider.php',
+        'Codingyu\\LaravelUEditor\\UrlResolverTrait' => __DIR__ . '/..' . '/codingyu/laravel-ueditor/src/UrlResolverTrait.php',
+        'Codingyu\\Ueditor\\Editor' => __DIR__ . '/..' . '/codingyu/ueditor/src/Editor.php',
+        'Codingyu\\Ueditor\\Ueditor' => __DIR__ . '/..' . '/codingyu/ueditor/src/Ueditor.php',
+        'Codingyu\\Ueditor\\UeditorServiceProvider' => __DIR__ . '/..' . '/codingyu/ueditor/src/UeditorServiceProvider.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',
         'Cron\\DayOfMonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/DayOfMonthField.php',
@@ -3345,6 +3378,16 @@ class ComposerStaticInit4d0ff8ad8ceb038d548686ba24dd60b8
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/Highlighter.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+        'Laravel\\Sanctum\\Contracts\\HasAbilities' => __DIR__ . '/..' . '/laravel/sanctum/src/Contracts/HasAbilities.php',
+        'Laravel\\Sanctum\\Guard' => __DIR__ . '/..' . '/laravel/sanctum/src/Guard.php',
+        'Laravel\\Sanctum\\HasApiTokens' => __DIR__ . '/..' . '/laravel/sanctum/src/HasApiTokens.php',
+        'Laravel\\Sanctum\\Http\\Controllers\\CsrfCookieController' => __DIR__ . '/..' . '/laravel/sanctum/src/Http/Controllers/CsrfCookieController.php',
+        'Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful' => __DIR__ . '/..' . '/laravel/sanctum/src/Http/Middleware/EnsureFrontendRequestsAreStateful.php',
+        'Laravel\\Sanctum\\NewAccessToken' => __DIR__ . '/..' . '/laravel/sanctum/src/NewAccessToken.php',
+        'Laravel\\Sanctum\\PersonalAccessToken' => __DIR__ . '/..' . '/laravel/sanctum/src/PersonalAccessToken.php',
+        'Laravel\\Sanctum\\Sanctum' => __DIR__ . '/..' . '/laravel/sanctum/src/Sanctum.php',
+        'Laravel\\Sanctum\\SanctumServiceProvider' => __DIR__ . '/..' . '/laravel/sanctum/src/SanctumServiceProvider.php',
+        'Laravel\\Sanctum\\TransientToken' => __DIR__ . '/..' . '/laravel/sanctum/src/TransientToken.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',

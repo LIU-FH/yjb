@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Support\Facades\Log;
 use Symfony\Component\ErrorHandler\Exception\FlattenException;
 
 class Handler extends ExceptionHandler
@@ -52,6 +53,7 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $exception)
     {
         if ($request->header('from') == 'wx') {
+            Log::error($exception);
             $fe = FlattenException::create($exception);
             $code = $fe->getStatusCode();
             $codeConfig = config('code');

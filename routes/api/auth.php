@@ -1,6 +1,6 @@
 <?php
 Route::prefix('auth')->group(function () {
-    Route::post('login', 'AuthController@login')->name('auth.login');
+    Route::post('wx_login', 'AuthController@wxLogin')->name('auth.wxLogin');
+    Route::post('phone_login', 'AuthController@phoneLogin')->name('auth.phoneLogin');
 });
-Route::post('upload', 'AuthController@upload')->name('auth.upload');
 

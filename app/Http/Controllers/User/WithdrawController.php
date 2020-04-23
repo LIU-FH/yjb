@@ -13,7 +13,7 @@ class WithdrawController extends Controller
     {
         $all = $request->all();
         $obj->fill($all);
-        $obj->user_id = $this->user['id'];
+        $obj->user_id = $request->user()->id;
         $obj->save();
         WalletRecord::addRecord($this->user['id'], 10, $all['amount']);
         return response(null, 200);
