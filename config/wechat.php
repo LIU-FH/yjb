@@ -7,7 +7,7 @@ return [
 
     'log' => [
         'level' => 'debug',
-        'file' => __DIR__ . '/wechat.log',
+        'file' => storage_path('logs') . '/wechat.log',
     ],
 
     'mch_id' => 'your-mch-id',
