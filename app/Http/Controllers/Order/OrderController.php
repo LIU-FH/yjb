@@ -43,15 +43,15 @@ class OrderController extends Controller
 
     public function ready(Request $request)
     {
-        $data = Order::createOrder($this->user, $request->all());
-        $address = Address::getDefaultAddress($this->user->id);
+        $data = Order::createOrder($request->user()->id, $request->all());
+        $address = Address::getDefaultAddress($request->user()->id);
         return response(array_merge($data, $address), 200);
     }
 
     public function store(Request $request)
     {
         $params = $request->all();
-        $data = Order::createOrder($request->user(), $params['params'], $params['balance']);
+        $data = Order::createOrder($request->user()->id, $params['params'], $params['balance']);
         $data['address_name'] = $params['address_name'];
         $data['address_tel'] = $params['address_tel'];
         $data['address_details'] = $params['address_details'];
@@ -82,7 +82,7 @@ class OrderController extends Controller
                 'out_trade_no' => $order->order_no,
                 'total_fee' => $order->wx_balance,
                 'trade_type' => 'JSAPI',
-                'openid' => $this->user['openid'],
+                'openid' => $request->user()['openid'],
             ]);
             if ($unifyRes['return_msg'] != 'OK') {
                 abort(5070);
@@ -115,7 +115,7 @@ class OrderController extends Controller
             'out_trade_no' => $order->order_no,
             'total_fee' => $order->wx_balance,
             'trade_type' => 'JSAPI',
-            'openid' => $this->user['openid'],
+            'openid' => $request->user()['openid'],
         ]);
         if ($unifyRes['return_msg'] != 'OK') {
             abort(5070);

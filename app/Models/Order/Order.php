@@ -5,6 +5,7 @@ namespace App\Models\Order;
 use App\Models\Goods\Goods;
 use App\Models\Goods\GoodsCart;
 use App\Models\Goods\GoodsGroup;
+use App\Models\User\User;
 use App\Models\User\Wallet;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;
@@ -65,7 +66,7 @@ class Order extends Model
      * @param int $balance
      * @return mixed
      */
-    public static function createOrder($user, $params, $balance = 0)
+    public static function createOrder($user_id, $params, $balance = 0)
     {
         $goodsList = [];
         if (!empty($params['goods'])) {
@@ -94,6 +95,7 @@ class Order extends Model
         if (count($goodsList) == 0){
             abort(5041);
         }
+        $user = User::find($user_id);
         $amount_total = $discount = $discount_amount = 0;
         foreach ($goodsList as $item) {
             $item['user_id'] = $user->id;
