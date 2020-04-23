@@ -59,6 +59,36 @@ class OrderController extends Controller
         DB::beginTransaction();
         $order = new Order();
         $unifyRes = [];
+
+        $order->fill($data);
+        if (!$order->save()) {
+            abort(500);
+        }
+        if (isset($params['params']['cart'])) {
+            if (!GoodsCart::whereIn('id', explode(',', $params['params']['cart']))->delete()) {
+                abort(500);
+            }
+        }
+        $details = array_map(function ($item) use ($order) {
+            $item['order_id'] = $order->id;
+            return $item;
+        }, $data['details']);
+        if (!OrderDetails::insert($details)) {
+            abort(500);
+        }
+        $app = Factory::payment(config('wechat'));
+        $unifyRes = $app->order->unify([
+            'body' => $data['details'][0]['title'],
+            'out_trade_no' => $order->order_no,
+            'total_fee' => $order->wx_balance,
+            'trade_type' => 'JSAPI',
+            'openid' => $request->user()['openid'],
+        ]);
+        if ($unifyRes['return_msg'] != 'OK') {
+            abort(5070);
+        }
+
+
         try {
             $order->fill($data);
             if (!$order->save()) {
