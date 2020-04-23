@@ -54,7 +54,7 @@ class Goods extends Model
      */
     public static function getEffectiveGoods($goods_id)
     {
-        $goods = Goods::find($goods_id);
+        $goods = Goods::find((int)$goods_id);
         if (!$goods) {
             abort(5020);
         }
