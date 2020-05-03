@@ -27,7 +27,7 @@ class QueryListener
      */
     public function handle(QueryExecuted $event)
     {
-        if (config('app.debug')) {
+        if (config('app.db_log')) {
             $sql = str_replace("?", "'%s'", $event->sql);
             $log = vsprintf($sql, $event->bindings) . ';';
             Log::debug($log);

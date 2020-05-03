@@ -85,6 +85,7 @@ class OrderController extends Controller
                 'openid' => $request->user()['openid'],
             ]);
             if ($unifyRes['return_msg'] != 'OK') {
+                Log::error("wx-pay", $unifyRes);
                 abort(5070);
             }
             DB::commit();
