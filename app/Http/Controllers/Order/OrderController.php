@@ -80,7 +80,7 @@ class OrderController extends Controller
             $payData = [
                 'body' => $data['details'][0]['title'],
                 'out_trade_no' => $order->order_no,
-                'total_fee' => $order->wx_balance * 100,
+                'total_fee' => (int) $order->wx_balance,
                 'trade_type' => 'JSAPI',
                 'openid' => $request->user()['openid'],
             ];
