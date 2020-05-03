@@ -77,13 +77,15 @@ class OrderController extends Controller
                 abort(500);
             }
             $app = Factory::payment(config('wechat'));
-            $unifyRes = $app->order->unify([
+            $payData = [
                 'body' => $data['details'][0]['title'],
                 'out_trade_no' => $order->order_no,
                 'total_fee' => $order->wx_balance,
                 'trade_type' => 'JSAPI',
                 'openid' => $request->user()['openid'],
-            ]);
+            ];
+            $unifyRes = $app->order->unify($payData);
+            Log::info("wx-pay-data", $payData);
             if ($unifyRes['return_msg'] != 'OK') {
                 Log::error("wx-pay", $unifyRes);
                 abort(5070);
