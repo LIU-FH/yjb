@@ -84,9 +84,9 @@ class OrderController extends Controller
                 'trade_type' => 'JSAPI',
                 'openid' => $request->user()['openid'],
             ];
-            $unifyRes = $app->order->unify($payData);
             Log::info("wx-pay-data", $payData);
-            if ($unifyRes['return_msg'] != 'OK') {
+            $unifyRes = $app->order->unify($payData);
+            if ($unifyRes['return_code'] !== 'SUCCESS') {
                 Log::error("wx-pay", $unifyRes);
                 abort(5070);
             }
