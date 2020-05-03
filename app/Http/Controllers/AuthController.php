@@ -24,8 +24,8 @@ class AuthController extends Controller
             try {
                 $app = Factory::miniProgram(config('wechat'));
                 $wxAuth = $app->auth->session($request->input('code'));
-                $openid = $wxAuth['openId'];
-                $unionid = $wxAuth['unionId'];
+                $openid = $wxAuth['openid'];
+                $unionid = isset($wxAuth['unionid']) ? $wxAuth['unionid'] : null;
                 $session_key = $wxAuth['session_key'];
             } catch (\Exception $e) {
                 Log::error("wx-auth", $wxAuth);
