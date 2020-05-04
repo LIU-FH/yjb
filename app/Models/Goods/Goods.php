@@ -32,6 +32,12 @@ class Goods extends Model
         return $value ? explode(',', $value) : [];
     }
 
+    public function setDetailsAttribute($value)
+    {
+        $value = preg_replace('/(<img).+(src=\"?.+)images\/(.+\.(jpg|gif|bmp|bnp|png)\"?).+>/i', "\${1} \${2}uc/images/\${3}>", $value);
+        return  str_replace('<img', '<img width="100%" height="auto"', $value);
+    }
+
     public function getSellStatus()
     {
         $status = 0;
@@ -54,7 +60,7 @@ class Goods extends Model
      */
     public static function getEffectiveGoods($goods_id)
     {
-        $goods = Goods::find((int)$goods_id);
+        $goods = Goods::find((int) $goods_id);
         if (!$goods) {
             abort(5020);
         }
