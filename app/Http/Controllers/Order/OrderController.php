@@ -84,7 +84,7 @@ class OrderController extends Controller
                 'trade_type' => 'JSAPI',
                 'openid' => $request->user()['openid'],
             ];
-            Log::info("wx-pay-data", array_merge($payData, ['config'=>config('wechat')]));
+            Log::info("wx-pay-data", $payData);
             $unifyRes = $app->order->unify($payData);
             if ($unifyRes['return_code'] !== 'SUCCESS') {
                 Log::error("wx-pay", $unifyRes);
