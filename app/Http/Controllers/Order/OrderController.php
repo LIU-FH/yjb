@@ -86,6 +86,16 @@ class OrderController extends Controller
             ];
             Log::info("wx-pay-data", $payData);
             $unifyRes = $app->order->unify($payData);
+            $result = $app->order->unify([
+                'body' => '腾讯充值中心-QQ会员充值',
+                'out_trade_no' => '20200806125346',
+                'total_fee' => 88,
+                'spbill_create_ip' => '123.12.12.123', // 可选，如不传该参数，SDK 将会自动获取相应 IP 地址
+                'notify_url' => 'https://pay.weixin.qq.com/wxpay/pay.action', // 支付结果通知网址，如果不设置则会使用配置里的默认地址
+                'trade_type' => 'JSAPI', // 请对应换成你的支付方式对应的值类型
+                'openid' => $request->user()['openid'],
+            ]);
+            Log::info("wx-pay-result", $result);
             if ($unifyRes['return_code'] !== 'SUCCESS') {
                 Log::error("wx-pay", $unifyRes);
                 abort(5070);
