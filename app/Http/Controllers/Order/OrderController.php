@@ -13,6 +13,7 @@ use App\Models\Order\OrderDetails;
 use App\Models\User\Address;
 use App\Traits\RequestTrait;
 use EasyWeChat\Factory;
+use EasyWeChatComposer\EasyWeChat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -76,7 +77,8 @@ class OrderController extends Controller
             if (!OrderDetails::insert($details)) {
                 abort(500);
             }
-            $app = Factory::payment(config('wechat'));
+            $Factory = new Factory();
+            $app = $Factory->payment(config('wechat'));
             $payData = [
                 'body' => $data['details'][0]['title'],
                 'out_trade_no' => $order->order_no,
