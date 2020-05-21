@@ -13,7 +13,6 @@ use App\Models\Order\OrderDetails;
 use App\Models\User\Address;
 use App\Traits\RequestTrait;
 use EasyWeChat\Factory;
-use EasyWeChat\Payment\Application;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -77,8 +76,7 @@ class OrderController extends Controller
             if (!OrderDetails::insert($details)) {
                 abort(500);
             }
-            // $app = Factory::payment(config('wechat'));
-            $app = new Application(config('wechat'));
+            $app = Factory::payment(config('wechat'));
             $payData = [
                 'body' => $data['details'][0]['title'],
                 'out_trade_no' => $order->order_no,
@@ -92,6 +90,7 @@ class OrderController extends Controller
                 Log::error("wx-pay", $unifyRes);
                 abort(5070);
             }
+            $result = $app->jssdk->appConfig($unifyRes['prepay_id']);
             DB::commit();
         } catch (\Exception $exception) {
             DB::rollBack();
@@ -102,10 +101,7 @@ class OrderController extends Controller
         }
         return response([
             'order_id' => $order->id,
-            'timeStamp' => time(),
-            'nonce_str' => $unifyRes['nonce_str'],
-            'prepay_id' => $unifyRes['prepay_id'],
-            'sign' => $unifyRes['sign'],
+            'wx_result' => $result,
         ], 200);
     }
 
